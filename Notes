@@ -1,0 +1,179 @@
+Videos
+- see what models
+- see what data
+- see what data cleaning, eda they do
+- see what stats application they do
+- see what ml pre-processing they do
+- see how they evaluate/diagnose model.
+- see how they compare models, improve models.
+
+------ Kaggle Datasets
+Loan Predication: dataset most yt videos base on 614 x 13
+https://www.kaggle.com/datasets/ninzaami/loan-predication
+https://www.kaggle.com/datasets/altruistdelhite04/loan-prediction-problem-dataset/data
+Loan Data: 
+https://www.kaggle.com/datasets/zhijinzhai/loandata 500 x 11
+Laon Data (lending club?):
+https://www.kaggle.com/datasets/itssuru/loan-data 9578 x 14
+Loan Defaulter: 
+https://www.kaggle.com/datasets/gauravduttakiit/loan-defaulter 2 Files (100s X 10k+) 
+Loan Default Dataset:
+https://www.kaggle.com/datasets/yasserh/loan-default-dataset/data 24k x 34
+All Lending Club Loan(~3 versions): 
+https://www.kaggle.com/datasets/wordsforthewise/lending-club 396K x 27
+
+
+-------Loan Approval | Credit Approval
+https://www.youtube.com/watch?v=6fEnU_1Z8OE learnbay
+    - credit approval dataset
+    - df.head(, get length of data, see len() of unique customer id
+    - use set, star identifying duplicates
+    - finds unique value for each variable
+    - visuallize missing data
+        - import missngno as msno
+    - manually encode
+    -
+
+      
+https://www.youtube.com/watch?v=vSBGCf5hqDE&t=2136s CloudyML
+
+https://www.youtube.com/watch?v=KZqP25FX8w8&t=114s Onue Baltachi
+
+https://www.youtube.com/watch?v=K_Z1BlBrxSA que8
+
+https://www.youtube.com/watch?v=A-9u9FupJXo Kotha Ed
+
+https://www.youtube.com/watch?v=CVtHCtKMzTc Kunal Sahu EDA
+
+https://www.youtube.com/watch?v=XckM1pFgZmg&t=353s siddhardhan Loan Predication Data (614 x 13)
+    - import sklearn svm, accuracy_score
+    - glance data head, data shape row vs col, df.describe
+    - drops rows with any missing values with df.dropna()
+    - manually encodes col df.replace({'Col': {'Value1':1, 'Value2':0})
+    - See cardinality, proportion of df['Dep'].valiue_counts()
+        - replace 3+ category with 4.
+    - Data Viz
+        - countplot for df['Education'] by Target Variable hue
+        - countplot for df['Education'] by Target Variable hue
+    - Manually Encode remaining categorical variables with ordinal 0,1,2 with df.replace(dictionary)
+    - Seperate X and y data subsets.
+    - train test split set stratify parameter= True
+    - create svm moodel, fit model object on X_train, Y_train
+    - Get Training Accuracy 
+        - get training_prediction model_object.predict(X_train)
+        - training accuracy with accuracy_score(X_train_predictions,Y_train)
+    - Get Test Accuracy
+        - get test_predictions model_object.predict(X_test)
+        - get test accuracy with accuracy_score(test_predictions,Y_test)
+    - Compare Accuracy score on training and test data.
+
+
+https://www.youtube.com/watch?v=x2NrPeHSPU0&t=979s Simplilearn Loan Predication Data (614 x 13)
+    - import svm
+    - glance at data, datatypes, info
+        - see missing data.
+    - log normalize 
+        - loan amount, create total income(applicant + coapplicant),
+        - plot histogram of these two col
+    - imputation on missing data
+        - categorical cols: mode impuation
+        - numerical cols: mean imputation
+    - plots
+        - do categrical col _counts 
+        - do categorical col countplots
+    - proprocessing
+        - Encode
+            - create labelencoder object with x and y train data
+            - label encode test data
+        - Scale
+            - create scaler objects from x_traing data
+            - use same scaler to scale test data.
+    - create RandomForrestClassifier model, Navie Bayes, Decision Tree, KNeighborsClassifier
+        - create model object
+        - fit model
+        - get predictions
+        - get accuracy score
+
+https://www.youtube.com/watch?v=p3-7qW_t5bw&t=346s Data Thinkers
+    - glance data
+        - head, tail, info
+    - address missing
+        - for cols missing < 5% data drop the rows
+        - for cols missing > 5% impute
+            - imputed both with mode
+    - handle categorical
+        - replace semi_categorical-number values with appropriate number
+        - manually encode categorical values with df.map function
+        - make the datatype numbers
+    - Create X and y dataframes
+    - Feature Scaling
+        - create Standard Scaler Object
+    - import scikitlearn modules
+        - from sklearn.model_selection import train_test_split, cross_val_score
+        - from sklearn.metrics import accuracy_score
+    - create model objects
+        - train model_object on x_train, y_train
+        - get test_predictions
+        - get accuracy score on accuracy_score(test_predictions, y_test)
+        -
+
+
+
+
+https://www.youtube.com/watch?v=And0IClm5L8 EDA Analytics Vidhya (loan applications data 307K x 122 )
+- Need High Quality Model: 
+    - False Default means lost revenue
+    - False Approval: means will lose revenue
+- understand structure of data
+    - num rows col, df.shape
+    - see datatypes
+- before eda do data quality check/validation check
+- deal with missing data.
+    - if missing more than likely 40%|50% delete col
+        - if missing <40% impute or remove col  
+    - Remaining Cols with Nans
+        - group cols with same pct missing nans
+        - look at groups col types
+        - check col value distribution
+            - check boxplot, value counts, and describe of each col
+        - if lot of values are one value, we can do mode imputation
+        - if there is not clear way to impute data, consider removing
+- check datatypes expected match col names, col description
+- EDA
+    - address outliers
+    -   identify outliers 1.5*IQR Box Plot method
+    -   compute the IQR, and upper IQR*1.5 threshholds
+    -   use windsurization of outlier rows
+    - Bin Continous Variables
+    - Check Inbalance Target T/F
+    - See Breakdown of Variabels by Target Variables
+        - Separate Numerical/Categorical Variables
+        - Categorical
+            - see value_count/frequence counts % plots by taget variable
+
+
+
+
+---------- Loan Eligibility
+https://www.youtube.com/watch?v=And0IClm5L8&t=1674s Analytics Vidhya
+
+https://www.youtube.com/watch?v=j54AZjqmCjI Machine Learning Hub
+
+https://www.youtube.com/watch?v=T9kgWBmUIRk&t=135s edureka
+
+https://www.youtube.com/watch?v=hHTrUnYkUos Tiny Owl
+
+
+
+https://www.youtube.com/watch?v=bNY3Xaxww7g Anlytics Vidhya EDA
+
+
+
+
+---------- Loan Default Prediction
+https://www.youtube.com/watch?v=doVlaEkrrvo Learnera
+Credit Risk Machine Learning
+
+
+
+Credit Card Fraud Machine Learning
